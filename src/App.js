@@ -1,7 +1,6 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter , Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "animate.css";
 
 import SignUp from "./components/SignUp";
 import SignIn from "./components/SignIn";
@@ -12,11 +11,11 @@ import Newsletter from "./components/HomePage/Newsletter";
 
 function App() {
   return (
-    <Router>
+    <HashRouter>
       <Routes>
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />
-        <Route path="/home" element={
+        <Route path="/" element={
           <>
             <NavBar />
             <Banner />
@@ -26,7 +25,7 @@ function App() {
           </>
         } />
       </Routes>
-    </Router>
+    </HashRouter>
   );
 }
 

@@ -2,7 +2,6 @@ import React from "react";
 import { useEffect } from "react";
 import PasteImage from "../../assets/img/PasteImage.png";
 import backgroundimg from "../../assets/img/backgroundimg.png";
-
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
