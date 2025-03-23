@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/Luxora-store/static/css/main.dacfa8f6.css",
+    "main.js": "/Luxora-store/static/js/main.982aec4b.js",
+    "static/js/453.7f02db9b.chunk.js": "/Luxora-store/static/js/453.7f02db9b.chunk.js",
+    "static/media/backgroundimg.png": "/Luxora-store/static/media/backgroundimg.b33ff04edc6b85233a5c.png",
+    "static/media/PasteImage.png": "/Luxora-store/static/media/PasteImage.c81bd4a248e79fc84e9e.png",
+    "static/media/article2.png": "/Luxora-store/static/media/article2.c8dbfa21e960a4a18d20.png",
+    "static/media/Newsletter.png": "/Luxora-store/static/media/Newsletter.2521ad6d1c03050e4199.png",
+    "static/media/imgarticle1.png": "/Luxora-store/static/media/imgarticle1.a3cb268805ef13a4117d.png",
+    "static/media/article3.png": "/Luxora-store/static/media/article3.9f58b63e1f3fa659c1de.png",
+    "static/media/picSignUp.png": "/Luxora-store/static/media/picSignUp.84cdc071906355a0cb0c.png",
+    "static/media/Card.png": "/Luxora-store/static/media/Card.751680159612d1d402b2.png",
+    "static/media/sofa.png": "/Luxora-store/static/media/sofa.cb0fe29d161386d2227e.png",
+    "static/media/Toasted.png": "/Luxora-store/static/media/Toasted.93d18ba9bac86389a669.png",
+    "static/media/Card3.png": "/Luxora-store/static/media/Card3.07d2db9335e4d2e04272.png",
+    "static/media/table.png": "/Luxora-store/static/media/table.e547dc7598b89851fc20.png",
+    "static/media/Card2.png": "/Luxora-store/static/media/Card2.b1a499551b2456d86e78.png",
+    "static/media/lamp.png": "/Luxora-store/static/media/lamp.1a5c4e5d34211ef243a9.png",
+    "index.html": "/Luxora-store/index.html",
+    "main.dacfa8f6.css.map": "/Luxora-store/static/css/main.dacfa8f6.css.map",
+    "main.982aec4b.js.map": "/Luxora-store/static/js/main.982aec4b.js.map",
+    "453.7f02db9b.chunk.js.map": "/Luxora-store/static/js/453.7f02db9b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dacfa8f6.css",
+    "static/js/main.982aec4b.js"
+  ]
+}
