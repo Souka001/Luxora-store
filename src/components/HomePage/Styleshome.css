@@ -585,6 +585,7 @@ height: 22px; */
   position: relative; /* Pour l'effet hover */
   overflow: hidden; /* Pour cacher l'overflow de l'effet */
   background-color: #000000;
+  margin-top: -12rem;
 }
 
 .add-to-cart-btn:hover {

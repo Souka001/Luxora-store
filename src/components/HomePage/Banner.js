@@ -17,12 +17,12 @@ import Toasted from "../../assets/img/Toasted.png";
 import imgarticle1 from "../../assets/img/imgarticle1.png";
 import article2 from "../../assets/img/article2.png";
 import article3 from "../../assets/img/article3.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar, faStarHalfAlt } from "@fortawesome/free-solid-svg-icons";
-import "./Styleshome.css";
+import ProductCard from "./ProductCard"; 
 import { useState } from "react";
+import "./Styleshome.css";
+import { FaHeart } from "react-icons/fa";
 import { Carousel } from "react-bootstrap";
-import AOS from 'aos';
+import AOS from "aos";
 function Banner() {
   const [index, setIndex] = useState(0);
   const handleSelect = (selectedIndex) => {
@@ -47,7 +47,7 @@ function Banner() {
   useEffect(() => {
     AOS.init({
       duration: 1000,
-      once: true, 
+      once: true,
     });
   }, []);
 
@@ -55,11 +55,38 @@ function Banner() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  const products = [
+    {
+      imgSrc: sofa,
+      title: "Loveseat Sofa",
+      price: "$199.00",
+      oldPrice: "$400.00",
+      rating: 4.5,
+    },
+    {
+      imgSrc: lamp,
+      title: "Table Lamp",
+      price: "$22.99",
+      rating: 5,
+    },
+    {
+      imgSrc: table,
+      title: "Beige Table Lamp",
+      price: "$20.99",
+      rating: 4.5,
+    },
+    {
+      imgSrc: Toasted,
+      title: "Toasted",
+      price: "$24.99",
+      rating: 5,
+    },
+  ];
 
   return (
     <section className="Banner mt-5">
       <Container>
-        <Row >
+        <Row>
           <Col size={12} md={12} className="boxtitle">
             <Carousel
               activeIndex={index}
@@ -85,18 +112,14 @@ function Banner() {
         </Row>
         <Row>
           <Col size={12} md={6}>
-            <h1 data-aos="fade-up"
-            
-            >
+            <h1 data-aos="fade-up">
               Simply Unique/
               <br />
               <span> Simply Better.</span>
             </h1>
           </Col>
           <Col size={12} md={6}>
-            <p
-             className="mt-4"
-            >
+            <p className="mt-4">
               3legant is a gift & decorations store based in HCMC,
               <br /> Vietnam. Est since 2025.{" "}
             </p>
@@ -104,8 +127,7 @@ function Banner() {
         </Row>
         <Row className="mt-4">
           <Col size={12} md={6}>
-            <div
-            className="position-relative me-1">
+            <div className="position-relative me-1">
               <img src={Card} alt="card" className="img-fluid w-100 mb-4" />
               <div className="position-absolute top-0 text-white p-2 text-start m-4">
                 <h2 className="mb-0 ">Living Room</h2>
@@ -123,9 +145,7 @@ function Banner() {
             </div>
           </Col>
           <Col size={12} md={6}>
-            <div
-              className="position-relative me-1">
-            
+            <div className="position-relative me-1">
               <img src={Card2} alt="card2" className="img-fluid w-100 " />
               <div className="position-absolute bottom-0 text-white p-2 text-start m-4">
                 <h2 className="mb-0">Bedroom</h2>
@@ -142,8 +162,7 @@ function Banner() {
               </div>
             </div>
             <br />
-            <div
-            className="position-relative me-1">
+            <div className="position-relative me-1">
               <img src={Card3} alt="card3" className="img-fluid w-100 mt-0" />
               <div className="position-absolute bottom-0 text-white p-2 text-start m-4 ">
                 <h2 className="mb-0">Kitchen</h2>
@@ -163,17 +182,15 @@ function Banner() {
         </Row>
         <Row>
           <Col md={6} className="contarrv">
-            <h1
-              className="mb-2 mt-3"
-            >
+            <h1 className="mb-2 mt-3">
               New
               <br /> Arrivals
             </h1>
           </Col>
-          <Col md={6} >
+          <Col md={6}>
             <div
-             className="mb-4 text-decoration-underline cursor-pointer text-end " 
-              style={{ marginTop: "3rem"}}
+              className="mb-4 text-decoration-underline cursor-pointer text-end "
+              style={{ marginTop: "3rem" }}
             >
               <a>More Products</a>
               <img
@@ -185,12 +202,8 @@ function Banner() {
           </Col>
         </Row>
 
-        <Row className="allcards ">
-          <Col
-            md={3}
-           
-            style={{ marginBottom: "3rem"}}
-          >
+        {/* <Row className="allcards ">
+          <Col md={3} style={{ marginBottom: "3rem" }}>
             <div className="card position-relative ">
               <img src={sofa} className="card-img-top" alt="Sofa" />
               <div className="position-absolute top-0 text-white p-2 text-start m-0">
@@ -213,10 +226,11 @@ function Banner() {
                 </button>
               </div>
               <div className="position-absolute top-0 end-0 m-2">
-                <img
-                  style={{ width: "52px", height: "52px" }}
-                  src={like}
-                  alt="like"
+                <FaHeart
+                  size={24}
+                  color={liked ? "red" : "black"}
+                  style={{ cursor: "pointer" }}
+                  onClick={() => setLiked(!liked)}
                 />
               </div>
               <div
@@ -224,7 +238,9 @@ function Banner() {
                 className="position-absolute start-50 translate-middle-x bottom-0"
               >
                 {" "}
-                <button className="add-to-cart-btn btn btn-dark w-100 h-100 ">Add to cart</button>
+                <button className="add-to-cart-btn btn btn-dark w-100 h-100 ">
+                  Add to cart
+                </button>
               </div>
             </div>
 
@@ -243,11 +259,7 @@ function Banner() {
             </span>
           </Col>
 
-          <Col
-            md={3}
-           
-            style={{ marginBottom: "3rem"}}
-          >
+          <Col md={3} style={{ marginBottom: "3rem" }}>
             <div className="card position-relative">
               <img src={lamp} className="card-img-top" alt="lamp" />
               <div className="position-absolute top-0 text-white p-2 text-start m-0">
@@ -270,10 +282,11 @@ function Banner() {
                 </button>
               </div>
               <div className="position-absolute top-0 end-0 m-2">
-                <img
-                  style={{ width: "52px", height: "52px" }}
-                  src={like}
-                  alt="like"
+                <FaHeart
+                  size={24}
+                  color={liked ? "red" : "black"}
+                  style={{ cursor: "pointer" }}
+                  onClick={() => setLiked(!liked)}
                 />
               </div>
               <div
@@ -281,7 +294,9 @@ function Banner() {
                 className="position-absolute start-50 translate-middle-x bottom-0"
               >
                 {" "}
-                <button className="add-to-cart-btn btn btn-dark w-100 h-100 ">Add to cart</button>
+                <button className="add-to-cart-btn btn btn-dark w-100 h-100 ">
+                  Add to cart
+                </button>
               </div>
             </div>
 
@@ -296,11 +311,7 @@ function Banner() {
             <h5 className="mt-2">Table Lamp</h5>
             <span className="fw-bold me-3">$22.99</span>
           </Col>
-          <Col
-            md={3}
-           
-            style={{ marginBottom: "3rem" }}
-          >
+          <Col md={3} style={{ marginBottom: "3rem" }}>
             <div className="card position-relative">
               <img src={table} className="card-img-top" alt="table" />
               <div className="position-absolute top-0 text-white p-2 text-start m-0">
@@ -323,10 +334,11 @@ function Banner() {
                 </button>
               </div>
               <div className="position-absolute top-0 end-0 m-2">
-                <img
-                  style={{ width: "52px", height: "52px" }}
-                  src={like}
-                  alt="like"
+                <FaHeart
+                  size={24}
+                  color={liked ? "red" : "black"}
+                  style={{ cursor: "pointer" }}
+                  onClick={() => setLiked(!liked)}
                 />
               </div>
               <div
@@ -334,7 +346,9 @@ function Banner() {
                 className="position-absolute start-50 translate-middle-x bottom-0"
               >
                 {" "}
-                <button className="add-to-cart-btn btn btn-dark w-100 h-100 ">Add to cart</button>
+                <button className="add-to-cart-btn btn btn-dark w-100 h-100 ">
+                  Add to cart
+                </button>
               </div>
             </div>
 
@@ -349,11 +363,7 @@ function Banner() {
             <h5 className="mt-2">Beige Table Lamp</h5>
             <span className="fw-bold me-3">$20.99</span>
           </Col>
-          <Col
-            md={3}
-           
-            style={{ marginBottom: "3rem" }}
-          >
+          <Col md={3} style={{ marginBottom: "3rem" }}>
             <div className="card position-relative">
               <img src={Toasted} className="card-img-top" alt="Toasted" />
               <div className="position-absolute top-0 text-white p-2 text-start m-0">
@@ -376,10 +386,11 @@ function Banner() {
                 </button>
               </div>
               <div className="position-absolute top-0 end-0 m-2">
-                <img
-                  style={{ width: "52px", height: "52px" }}
-                  src={like}
-                  alt="like"
+                <FaHeart
+                  size={24}
+                  color={liked ? "red" : "black"}
+                  style={{ cursor: "pointer" }}
+                  onClick={() => setLiked(!liked)}
                 />
               </div>
               <div
@@ -387,7 +398,9 @@ function Banner() {
                 className="position-absolute start-50 translate-middle-x bottom-0"
               >
                 {" "}
-                <button className="add-to-cart-btn btn btn-dark w-100 h-100 ">Add to cart</button>
+                <button className="add-to-cart-btn btn btn-dark w-100 h-100 ">
+                  Add to cart
+                </button>
               </div>
             </div>
 
@@ -402,11 +415,16 @@ function Banner() {
             <h5 className="mt-2">Toasted</h5>
             <span className="fw-bold me-3">$24.99</span>
           </Col>
-        </Row>
-
+        </Row> */}
+ <Row className="allcards mt-5">
+        {products.map((product, index) => (
+          <Col key={index} md={3} style={{ marginBottom: "3rem" }}>
+            <ProductCard {...product} />
+          </Col>
+        ))}
+      </Row>
         <Row className="values" style={{ marginTop: "0.5rem" }}>
-          <Col size={12} md={6} xs={6} lg={3}  > 
-          
+          <Col size={12} md={6} xs={6} lg={3}>
             <div className="crd">
               <svg
                 className="picavg"
@@ -441,7 +459,7 @@ function Banner() {
               <p>Order above $200</p>
             </div>
           </Col>
-          <Col size={12} md={6} xs={6} lg={3}  >
+          <Col size={12} md={6} xs={6} lg={3}>
             <div className="crd">
               <svg
                 className="picavg"
@@ -488,7 +506,7 @@ function Banner() {
               <p>30 days guarantee</p>
             </div>
           </Col>
-          <Col size={12} md={6} xs={6} lg={3}  >
+          <Col size={12} md={6} xs={6} lg={3}>
             <div className="crd">
               <svg
                 className="picavg"
@@ -510,7 +528,7 @@ function Banner() {
               <p>Secured by Stripe</p>
             </div>
           </Col>
-          <Col size={12} md={6} xs={6} lg={3}  >  
+          <Col size={12} md={6} xs={6} lg={3}>
             <div className="crd">
               <svg
                 className="picavg"
@@ -534,7 +552,7 @@ function Banner() {
           </Col>
         </Row>
         <Row style={{ marginBottom: "3rem" }}>
-          <Col md={6} xs={6} className="picback"> 
+          <Col md={6} xs={6} className="picback">
             <img
               src={backgroundimg}
               alt="no_backgroundimg"
@@ -645,7 +663,6 @@ function Banner() {
             </div>
           </Col>
         </Row>
-       
       </Container>
     </section>
   );
