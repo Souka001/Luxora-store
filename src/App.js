@@ -13,9 +13,9 @@ function App() {
   return (
     <HashRouter>
       <Routes>
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/signin" element={<SignIn />} />
-        <Route path="/" element={
+        <Route path="/#/signup" element={<SignUp />} />
+        <Route path="/#/signin" element={<SignIn />} />
+        <Route path="/#" element={
           <>
             <NavBar />
             <Banner />
