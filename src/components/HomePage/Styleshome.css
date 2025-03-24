@@ -876,7 +876,7 @@ flex-grow: 0;
   display: flex;
   justify-content: center !important;
   align-items: center !important;
-  margin-right: 5rem;
+  margin-right: 6rem;
 }
   .footer {
     display: flex;
@@ -905,7 +905,7 @@ flex-grow: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: -6rem;
+    margin-left: -5rem;
  
   
   }
